@@ -3,7 +3,6 @@ let chrome = {};
 let puppeteer;
 const express = require("express")();
 //const puppeteer = require("puppeteer");
-const puppeteer = require('puppeteer-core');
 const cors = require('cors');
 const randomUseragent = require('random-useragent');
 const NodeRSA = require('node-rsa');
