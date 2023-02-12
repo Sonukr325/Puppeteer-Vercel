@@ -43,6 +43,15 @@ app.get("/api", async (req, res) => {
     let browser = await puppeteer.launch(options);
     const url = req.query.url
     let page = await browser.newPage();
+    await page.setRequestInterception(true);
+    page.on('request', (req) => {
+        if(req.resourceType() == 'stylesheet' || req.resourceType() == 'font' || req.resourceType() == 'image'){
+            req.abort();
+        }
+        else {
+            req.continue();
+        }
+    });
     await page.goto(url);
     res.send(await page.title());
   } catch (err) {
