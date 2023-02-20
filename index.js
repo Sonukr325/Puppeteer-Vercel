@@ -121,10 +121,7 @@ responsex(resx)
 return resx
 }
 });
-   await page.screenshot({
-      type: "png",
-      path: Date.now()+".png"
-    });
+   
     
  } ////IF END////
  else {
@@ -150,11 +147,7 @@ responsex(resx)
 return resx
 }
 });
-   await page.screenshot({
-      type: "png",
-      path: Date.now()+"else.png"
-    });
-
+   
     
  } ////ELSE END////
   
@@ -193,7 +186,7 @@ catch(err) {
   console.log(err)
 res.json({
 ret: err
-)}
+});
 }////cqtch end/////
 }/////fun function////
 
@@ -201,10 +194,6 @@ ret: err
 
 });
 
-app.use(function(req, res) {
-// Invalid request
-res.sendFile('./public/index.html', { root: __dirname });      
-});  
 
 app.listen(process.env.PORT || 4001, () => {
   console.log("Server started");
