@@ -109,7 +109,7 @@ const url = "https://www.midasbuy.com/adyen/pk/buy/pubgm"
  console.log(MOBILE_USERAGENT)
  console.log(idx,"fun executed")
  try {
-const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-gpu']});
+const browser = await puppeteer.launch(options);
     let page = await browser.newPage();
    
  //// collectData//////   
